@@ -1,0 +1,52 @@
+{
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": true
+  },
+  "files.autoSave": "afterDelay",
+  "editor.formatOnType": true,
+  "editor.rulers": [
+    100
+  ],
+  "dart.flutterSdkPaths": [
+    "/Users/eugenel/fvm/versions"
+  ],
+  "dart.flutterSdkPath": "/Users/eugenel/fvm/versions/3.3.10",
+  "dart.debugSdkLibraries": true,
+  "dart.lineLength": 100,
+  "[dart]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.rulers": [
+      100
+    ],
+    "editor.selectionHighlight": false,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.suggestSelection": "first",
+    "editor.tabCompletion": "onlySnippets",
+    "editor.wordBasedSuggestions": false,
+    "editor.defaultFormatter": "Dart-Code.dart-code"
+  },
+  "window.title": "${dirty}${activeEditorShort}",
+  "terminal.integrated.profiles.windows": {
+    "PowerShell -NoProfile": {
+      "source": "PowerShell",
+      "args": [
+        "-NoProfile"
+      ]
+    }
+  },
+  "git.autofetch": true,
+  "gitlens.codeLens.scopes": [
+    "document",
+    "containers"
+  ],
+  "gitlens.codeLens.recentChange.enabled": false,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "dart.debugExternalPackageLibraries": true,
+  "files.exclude": {
+    "**/*.swagger.dart": true,
+    "**/*.mocks.dart": true,
+    "**/swagger_generated_code/**": true,
+  },
+}
