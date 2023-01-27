@@ -25,7 +25,8 @@ final GoRouter _router = GoRouter(
         GoRoute(
           path: 'details/:itemId',
           builder: (BuildContext context, GoRouterState state) {
-            return DetailsPage(id: state.params['userId'] ?? '');
+            final idd = state.params['itemId'];
+            return DetailsPage(id: state.params['itemId'] ?? '');
           },
         ),
       ],

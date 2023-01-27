@@ -13,10 +13,17 @@ extension CollectionItemModelMapper on CollectionItemModel {
   CollectionItemViewModel toViewModel() {
     return CollectionItemViewModel(
       id: id,
-      title: title,
       objectNumber: objectNumber,
-      longTitle: longTitle,
+      title: title,
+      hasImage: hasImage,
       principalOrFirstMaker: principalOrFirstMaker,
+      longTitle: longTitle,
+      showImage: showImage,
+      permitDownload: permitDownload,
+      webImage: webImage,
+      headerImage: headerImage,
+      productionPlaces: productionPlaces,
+      links: links,
     );
   }
 }

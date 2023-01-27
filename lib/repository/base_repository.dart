@@ -8,10 +8,7 @@ import 'package:rijksmuseum/repository/exceptions/index.dart';
 export 'dart:async';
 
 class BaseRepository {
-
-  static void initialize(
-  ) {
-  }
+  static void initialize() {}
 
   @protected
   Future<Response<T>> executeRequest<T>({
@@ -58,7 +55,7 @@ class BaseRepository {
           ? await invoker().timeout(Duration(seconds: requestTimeOutInSeconds))
           : await invoker();
 
-      print('Base -> executeApiCall -> response: ${response?.getString()}');
+      // print('Base -> executeApiCall -> response: ${response?.getString()}');
       if (response == null) {
         throw RepositoryException(message: 'Response is null');
       }

@@ -1,5 +1,6 @@
 import 'package:chopper/chopper.dart';
 import 'package:rijksmuseum/core/service_locator.dart';
+import 'package:rijksmuseum/services/api_key_interceptor.dart';
 import 'package:rijksmuseum/services/collection_service.dart';
 
 const String _kHost = 'www.rijksmuseum.nl';
@@ -17,12 +18,13 @@ class ServiceFactory extends ServiceLocator {
 
   void initialize() {
     final chopper = _getChopperClient();
-    registerFactory(() => CollectionService.create(chopper));
+    registerFactory(() => MuseumService.create(chopper));
   }
 
   ChopperClient _getChopperClient() {
     return ChopperClient(
       baseUrl: Uri.https(_kHost, '/api/$_kCulture'),
+      interceptors: [ApiKeyInterceptor()],
     );
   }
 }

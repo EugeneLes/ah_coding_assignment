@@ -1,6 +1,6 @@
 import 'package:rijksmuseum/core/service_locator.dart';
 import 'package:rijksmuseum/repository/base_repository.dart';
-import 'package:rijksmuseum/repository/collection_repository.dart';
+import 'package:rijksmuseum/repository/museum_repository.dart';
 import 'package:rijksmuseum/services/service_factory.dart';
 
 class RepositoryFactory extends ServiceLocator {
@@ -15,8 +15,8 @@ class RepositoryFactory extends ServiceLocator {
   }
 
   void _registerCollectionRepository() {
-    registerLazySingleton<CollectionRepository>(
-      () => CollectionRepository(get()),
+    registerLazySingleton<MuseumRepository>(
+      () => MuseumRepository(get()),
     );
   }
 }

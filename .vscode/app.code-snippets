@@ -9,20 +9,20 @@
 	/// For more info please look into: https://code.visualstudio.com/docs/editor/userdefinedsnippets
 	
 	// freezed
-	'freezed': {
-		'prefix': [
-			'freezed',
-			'fr',
+	"freezed": {
+		"prefix": [
+			"freezed",
+			"fr",
 		],
-		'body': [
-			'import 'package:freezed_annotation/freezed_annotation.dart';',
-			'',
-			'part '$1.freezed.dart';',
-			'',
-			'@freezed',
-			'class $2 with _\\$$2 {',
-			'\tfactory $2($0) = _$2;',
-			'}',
+		"body": [
+			"import 'package:freezed_annotation/freezed_annotation.dart';",
+			"",
+			"part '$1.freezed.dart';",
+			"",
+			"@freezed",
+			"class $2 with _\\$$2 {",
+			"\tfactory $2($0) = _$2;",
+			"}",
 		],
 	},
 }

@@ -7,29 +7,37 @@ part of 'collection_service.dart';
 // **************************************************************************
 
 // ignore_for_file: always_put_control_body_on_new_line, always_specify_types, prefer_const_declarations, unnecessary_brace_in_string_interps
-class _$CollectionService extends CollectionService {
-  _$CollectionService([ChopperClient? client]) {
+class _$MuseumService extends MuseumService {
+  _$MuseumService([ChopperClient? client]) {
     if (client == null) return;
     this.client = client;
   }
 
   @override
-  final definitionType = CollectionService;
+  final definitionType = MuseumService;
 
   @override
-  Future<Response<String>> loadCollection() {
-    final Uri $url = Uri.parse('/collection/?key=0fiuZFh4');
+  Future<Response<String>> loadCollection({
+    required int page,
+    required int pagesPerPage,
+  }) {
+    final Uri $url = Uri.parse('/collection');
+    final Map<String, dynamic> $params = <String, dynamic>{
+      'p': page,
+      'ps': pagesPerPage,
+    };
     final Request $request = Request(
       'GET',
       $url,
       client.baseUrl,
+      parameters: $params,
     );
     return client.send<String, String>($request);
   }
 
   @override
   Future<Response<String>> loadDetails(String objectNumber) {
-    final Uri $url = Uri.parse('/collection/${objectNumber}?key=0fiuZFh4');
+    final Uri $url = Uri.parse('/collection/${objectNumber}');
     final Request $request = Request(
       'GET',
       $url,

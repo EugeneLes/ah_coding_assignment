@@ -288,6 +288,7 @@ mixin _$CollectionState {
     required TResult Function(
             int pageCounter, CollectionViewModel viewModel, bool isLoading)
         loaded,
+    required TResult Function(String message, String stack) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -297,6 +298,7 @@ mixin _$CollectionState {
     TResult? Function(
             int pageCounter, CollectionViewModel viewModel, bool isLoading)?
         loaded,
+    TResult? Function(String message, String stack)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -306,28 +308,32 @@ mixin _$CollectionState {
     TResult Function(
             int pageCounter, CollectionViewModel viewModel, bool isLoading)?
         loaded,
+    TResult Function(String message, String stack)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(CollectionEmpty value) empty,
-    required TResult Function(CollectionLoading value) loading,
-    required TResult Function(CollectionLoaded value) loaded,
+    required TResult Function(CollectionEmptyState value) empty,
+    required TResult Function(CollectionLoadingState value) loading,
+    required TResult Function(CollectionLoadedState value) loaded,
+    required TResult Function(CollectionErrorState value) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(CollectionEmpty value)? empty,
-    TResult? Function(CollectionLoading value)? loading,
-    TResult? Function(CollectionLoaded value)? loaded,
+    TResult? Function(CollectionEmptyState value)? empty,
+    TResult? Function(CollectionLoadingState value)? loading,
+    TResult? Function(CollectionLoadedState value)? loaded,
+    TResult? Function(CollectionErrorState value)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(CollectionEmpty value)? empty,
-    TResult Function(CollectionLoading value)? loading,
-    TResult Function(CollectionLoaded value)? loaded,
+    TResult Function(CollectionEmptyState value)? empty,
+    TResult Function(CollectionLoadingState value)? loading,
+    TResult Function(CollectionLoadedState value)? loaded,
+    TResult Function(CollectionErrorState value)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -352,25 +358,25 @@ class _$CollectionStateCopyWithImpl<$Res, $Val extends CollectionState>
 }
 
 /// @nodoc
-abstract class _$$CollectionEmptyCopyWith<$Res> {
-  factory _$$CollectionEmptyCopyWith(
-          _$CollectionEmpty value, $Res Function(_$CollectionEmpty) then) =
-      __$$CollectionEmptyCopyWithImpl<$Res>;
+abstract class _$$CollectionEmptyStateCopyWith<$Res> {
+  factory _$$CollectionEmptyStateCopyWith(_$CollectionEmptyState value,
+          $Res Function(_$CollectionEmptyState) then) =
+      __$$CollectionEmptyStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$CollectionEmptyCopyWithImpl<$Res>
-    extends _$CollectionStateCopyWithImpl<$Res, _$CollectionEmpty>
-    implements _$$CollectionEmptyCopyWith<$Res> {
-  __$$CollectionEmptyCopyWithImpl(
-      _$CollectionEmpty _value, $Res Function(_$CollectionEmpty) _then)
+class __$$CollectionEmptyStateCopyWithImpl<$Res>
+    extends _$CollectionStateCopyWithImpl<$Res, _$CollectionEmptyState>
+    implements _$$CollectionEmptyStateCopyWith<$Res> {
+  __$$CollectionEmptyStateCopyWithImpl(_$CollectionEmptyState _value,
+      $Res Function(_$CollectionEmptyState) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$CollectionEmpty implements CollectionEmpty {
-  const _$CollectionEmpty();
+class _$CollectionEmptyState implements CollectionEmptyState {
+  const _$CollectionEmptyState();
 
   @override
   String toString() {
@@ -380,7 +386,7 @@ class _$CollectionEmpty implements CollectionEmpty {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$CollectionEmpty);
+        (other.runtimeType == runtimeType && other is _$CollectionEmptyState);
   }
 
   @override
@@ -394,6 +400,7 @@ class _$CollectionEmpty implements CollectionEmpty {
     required TResult Function(
             int pageCounter, CollectionViewModel viewModel, bool isLoading)
         loaded,
+    required TResult Function(String message, String stack) error,
   }) {
     return empty();
   }
@@ -406,6 +413,7 @@ class _$CollectionEmpty implements CollectionEmpty {
     TResult? Function(
             int pageCounter, CollectionViewModel viewModel, bool isLoading)?
         loaded,
+    TResult? Function(String message, String stack)? error,
   }) {
     return empty?.call();
   }
@@ -418,6 +426,7 @@ class _$CollectionEmpty implements CollectionEmpty {
     TResult Function(
             int pageCounter, CollectionViewModel viewModel, bool isLoading)?
         loaded,
+    TResult Function(String message, String stack)? error,
     required TResult orElse(),
   }) {
     if (empty != null) {
@@ -429,9 +438,10 @@ class _$CollectionEmpty implements CollectionEmpty {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(CollectionEmpty value) empty,
-    required TResult Function(CollectionLoading value) loading,
-    required TResult Function(CollectionLoaded value) loaded,
+    required TResult Function(CollectionEmptyState value) empty,
+    required TResult Function(CollectionLoadingState value) loading,
+    required TResult Function(CollectionLoadedState value) loaded,
+    required TResult Function(CollectionErrorState value) error,
   }) {
     return empty(this);
   }
@@ -439,9 +449,10 @@ class _$CollectionEmpty implements CollectionEmpty {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(CollectionEmpty value)? empty,
-    TResult? Function(CollectionLoading value)? loading,
-    TResult? Function(CollectionLoaded value)? loaded,
+    TResult? Function(CollectionEmptyState value)? empty,
+    TResult? Function(CollectionLoadingState value)? loading,
+    TResult? Function(CollectionLoadedState value)? loaded,
+    TResult? Function(CollectionErrorState value)? error,
   }) {
     return empty?.call(this);
   }
@@ -449,9 +460,10 @@ class _$CollectionEmpty implements CollectionEmpty {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(CollectionEmpty value)? empty,
-    TResult Function(CollectionLoading value)? loading,
-    TResult Function(CollectionLoaded value)? loaded,
+    TResult Function(CollectionEmptyState value)? empty,
+    TResult Function(CollectionLoadingState value)? loading,
+    TResult Function(CollectionLoadedState value)? loaded,
+    TResult Function(CollectionErrorState value)? error,
     required TResult orElse(),
   }) {
     if (empty != null) {
@@ -461,30 +473,30 @@ class _$CollectionEmpty implements CollectionEmpty {
   }
 }
 
-abstract class CollectionEmpty implements CollectionState {
-  const factory CollectionEmpty() = _$CollectionEmpty;
+abstract class CollectionEmptyState implements CollectionState {
+  const factory CollectionEmptyState() = _$CollectionEmptyState;
 }
 
 /// @nodoc
-abstract class _$$CollectionLoadingCopyWith<$Res> {
-  factory _$$CollectionLoadingCopyWith(
-          _$CollectionLoading value, $Res Function(_$CollectionLoading) then) =
-      __$$CollectionLoadingCopyWithImpl<$Res>;
+abstract class _$$CollectionLoadingStateCopyWith<$Res> {
+  factory _$$CollectionLoadingStateCopyWith(_$CollectionLoadingState value,
+          $Res Function(_$CollectionLoadingState) then) =
+      __$$CollectionLoadingStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$CollectionLoadingCopyWithImpl<$Res>
-    extends _$CollectionStateCopyWithImpl<$Res, _$CollectionLoading>
-    implements _$$CollectionLoadingCopyWith<$Res> {
-  __$$CollectionLoadingCopyWithImpl(
-      _$CollectionLoading _value, $Res Function(_$CollectionLoading) _then)
+class __$$CollectionLoadingStateCopyWithImpl<$Res>
+    extends _$CollectionStateCopyWithImpl<$Res, _$CollectionLoadingState>
+    implements _$$CollectionLoadingStateCopyWith<$Res> {
+  __$$CollectionLoadingStateCopyWithImpl(_$CollectionLoadingState _value,
+      $Res Function(_$CollectionLoadingState) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$CollectionLoading implements CollectionLoading {
-  const _$CollectionLoading();
+class _$CollectionLoadingState implements CollectionLoadingState {
+  const _$CollectionLoadingState();
 
   @override
   String toString() {
@@ -494,7 +506,7 @@ class _$CollectionLoading implements CollectionLoading {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$CollectionLoading);
+        (other.runtimeType == runtimeType && other is _$CollectionLoadingState);
   }
 
   @override
@@ -508,6 +520,7 @@ class _$CollectionLoading implements CollectionLoading {
     required TResult Function(
             int pageCounter, CollectionViewModel viewModel, bool isLoading)
         loaded,
+    required TResult Function(String message, String stack) error,
   }) {
     return loading();
   }
@@ -520,6 +533,7 @@ class _$CollectionLoading implements CollectionLoading {
     TResult? Function(
             int pageCounter, CollectionViewModel viewModel, bool isLoading)?
         loaded,
+    TResult? Function(String message, String stack)? error,
   }) {
     return loading?.call();
   }
@@ -532,6 +546,7 @@ class _$CollectionLoading implements CollectionLoading {
     TResult Function(
             int pageCounter, CollectionViewModel viewModel, bool isLoading)?
         loaded,
+    TResult Function(String message, String stack)? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -543,9 +558,10 @@ class _$CollectionLoading implements CollectionLoading {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(CollectionEmpty value) empty,
-    required TResult Function(CollectionLoading value) loading,
-    required TResult Function(CollectionLoaded value) loaded,
+    required TResult Function(CollectionEmptyState value) empty,
+    required TResult Function(CollectionLoadingState value) loading,
+    required TResult Function(CollectionLoadedState value) loaded,
+    required TResult Function(CollectionErrorState value) error,
   }) {
     return loading(this);
   }
@@ -553,9 +569,10 @@ class _$CollectionLoading implements CollectionLoading {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(CollectionEmpty value)? empty,
-    TResult? Function(CollectionLoading value)? loading,
-    TResult? Function(CollectionLoaded value)? loaded,
+    TResult? Function(CollectionEmptyState value)? empty,
+    TResult? Function(CollectionLoadingState value)? loading,
+    TResult? Function(CollectionLoadedState value)? loaded,
+    TResult? Function(CollectionErrorState value)? error,
   }) {
     return loading?.call(this);
   }
@@ -563,9 +580,10 @@ class _$CollectionLoading implements CollectionLoading {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(CollectionEmpty value)? empty,
-    TResult Function(CollectionLoading value)? loading,
-    TResult Function(CollectionLoaded value)? loaded,
+    TResult Function(CollectionEmptyState value)? empty,
+    TResult Function(CollectionLoadingState value)? loading,
+    TResult Function(CollectionLoadedState value)? loaded,
+    TResult Function(CollectionErrorState value)? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -575,25 +593,25 @@ class _$CollectionLoading implements CollectionLoading {
   }
 }
 
-abstract class CollectionLoading implements CollectionState {
-  const factory CollectionLoading() = _$CollectionLoading;
+abstract class CollectionLoadingState implements CollectionState {
+  const factory CollectionLoadingState() = _$CollectionLoadingState;
 }
 
 /// @nodoc
-abstract class _$$CollectionLoadedCopyWith<$Res> {
-  factory _$$CollectionLoadedCopyWith(
-          _$CollectionLoaded value, $Res Function(_$CollectionLoaded) then) =
-      __$$CollectionLoadedCopyWithImpl<$Res>;
+abstract class _$$CollectionLoadedStateCopyWith<$Res> {
+  factory _$$CollectionLoadedStateCopyWith(_$CollectionLoadedState value,
+          $Res Function(_$CollectionLoadedState) then) =
+      __$$CollectionLoadedStateCopyWithImpl<$Res>;
   @useResult
   $Res call({int pageCounter, CollectionViewModel viewModel, bool isLoading});
 }
 
 /// @nodoc
-class __$$CollectionLoadedCopyWithImpl<$Res>
-    extends _$CollectionStateCopyWithImpl<$Res, _$CollectionLoaded>
-    implements _$$CollectionLoadedCopyWith<$Res> {
-  __$$CollectionLoadedCopyWithImpl(
-      _$CollectionLoaded _value, $Res Function(_$CollectionLoaded) _then)
+class __$$CollectionLoadedStateCopyWithImpl<$Res>
+    extends _$CollectionStateCopyWithImpl<$Res, _$CollectionLoadedState>
+    implements _$$CollectionLoadedStateCopyWith<$Res> {
+  __$$CollectionLoadedStateCopyWithImpl(_$CollectionLoadedState _value,
+      $Res Function(_$CollectionLoadedState) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -603,7 +621,7 @@ class __$$CollectionLoadedCopyWithImpl<$Res>
     Object? viewModel = null,
     Object? isLoading = null,
   }) {
-    return _then(_$CollectionLoaded(
+    return _then(_$CollectionLoadedState(
       null == pageCounter
           ? _value.pageCounter
           : pageCounter // ignore: cast_nullable_to_non_nullable
@@ -622,8 +640,8 @@ class __$$CollectionLoadedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$CollectionLoaded implements CollectionLoaded {
-  const _$CollectionLoaded(this.pageCounter, this.viewModel,
+class _$CollectionLoadedState implements CollectionLoadedState {
+  const _$CollectionLoadedState(this.pageCounter, this.viewModel,
       {this.isLoading = false});
 
   @override
@@ -643,7 +661,7 @@ class _$CollectionLoaded implements CollectionLoaded {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CollectionLoaded &&
+            other is _$CollectionLoadedState &&
             (identical(other.pageCounter, pageCounter) ||
                 other.pageCounter == pageCounter) &&
             (identical(other.viewModel, viewModel) ||
@@ -659,8 +677,9 @@ class _$CollectionLoaded implements CollectionLoaded {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$CollectionLoadedCopyWith<_$CollectionLoaded> get copyWith =>
-      __$$CollectionLoadedCopyWithImpl<_$CollectionLoaded>(this, _$identity);
+  _$$CollectionLoadedStateCopyWith<_$CollectionLoadedState> get copyWith =>
+      __$$CollectionLoadedStateCopyWithImpl<_$CollectionLoadedState>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -670,6 +689,7 @@ class _$CollectionLoaded implements CollectionLoaded {
     required TResult Function(
             int pageCounter, CollectionViewModel viewModel, bool isLoading)
         loaded,
+    required TResult Function(String message, String stack) error,
   }) {
     return loaded(pageCounter, viewModel, isLoading);
   }
@@ -682,6 +702,7 @@ class _$CollectionLoaded implements CollectionLoaded {
     TResult? Function(
             int pageCounter, CollectionViewModel viewModel, bool isLoading)?
         loaded,
+    TResult? Function(String message, String stack)? error,
   }) {
     return loaded?.call(pageCounter, viewModel, isLoading);
   }
@@ -694,6 +715,7 @@ class _$CollectionLoaded implements CollectionLoaded {
     TResult Function(
             int pageCounter, CollectionViewModel viewModel, bool isLoading)?
         loaded,
+    TResult Function(String message, String stack)? error,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -705,9 +727,10 @@ class _$CollectionLoaded implements CollectionLoaded {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(CollectionEmpty value) empty,
-    required TResult Function(CollectionLoading value) loading,
-    required TResult Function(CollectionLoaded value) loaded,
+    required TResult Function(CollectionEmptyState value) empty,
+    required TResult Function(CollectionLoadingState value) loading,
+    required TResult Function(CollectionLoadedState value) loaded,
+    required TResult Function(CollectionErrorState value) error,
   }) {
     return loaded(this);
   }
@@ -715,9 +738,10 @@ class _$CollectionLoaded implements CollectionLoaded {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(CollectionEmpty value)? empty,
-    TResult? Function(CollectionLoading value)? loading,
-    TResult? Function(CollectionLoaded value)? loaded,
+    TResult? Function(CollectionEmptyState value)? empty,
+    TResult? Function(CollectionLoadingState value)? loading,
+    TResult? Function(CollectionLoadedState value)? loaded,
+    TResult? Function(CollectionErrorState value)? error,
   }) {
     return loaded?.call(this);
   }
@@ -725,9 +749,10 @@ class _$CollectionLoaded implements CollectionLoaded {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(CollectionEmpty value)? empty,
-    TResult Function(CollectionLoading value)? loading,
-    TResult Function(CollectionLoaded value)? loaded,
+    TResult Function(CollectionEmptyState value)? empty,
+    TResult Function(CollectionLoadingState value)? loading,
+    TResult Function(CollectionLoadedState value)? loaded,
+    TResult Function(CollectionErrorState value)? error,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -737,15 +762,178 @@ class _$CollectionLoaded implements CollectionLoaded {
   }
 }
 
-abstract class CollectionLoaded implements CollectionState {
-  const factory CollectionLoaded(
+abstract class CollectionLoadedState implements CollectionState {
+  const factory CollectionLoadedState(
       final int pageCounter, final CollectionViewModel viewModel,
-      {final bool isLoading}) = _$CollectionLoaded;
+      {final bool isLoading}) = _$CollectionLoadedState;
 
   int get pageCounter;
   CollectionViewModel get viewModel;
   bool get isLoading;
   @JsonKey(ignore: true)
-  _$$CollectionLoadedCopyWith<_$CollectionLoaded> get copyWith =>
+  _$$CollectionLoadedStateCopyWith<_$CollectionLoadedState> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$CollectionErrorStateCopyWith<$Res> {
+  factory _$$CollectionErrorStateCopyWith(_$CollectionErrorState value,
+          $Res Function(_$CollectionErrorState) then) =
+      __$$CollectionErrorStateCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String message, String stack});
+}
+
+/// @nodoc
+class __$$CollectionErrorStateCopyWithImpl<$Res>
+    extends _$CollectionStateCopyWithImpl<$Res, _$CollectionErrorState>
+    implements _$$CollectionErrorStateCopyWith<$Res> {
+  __$$CollectionErrorStateCopyWithImpl(_$CollectionErrorState _value,
+      $Res Function(_$CollectionErrorState) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? message = null,
+    Object? stack = null,
+  }) {
+    return _then(_$CollectionErrorState(
+      null == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+      stack: null == stack
+          ? _value.stack
+          : stack // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$CollectionErrorState implements CollectionErrorState {
+  const _$CollectionErrorState(this.message, {this.stack = ''});
+
+  @override
+  final String message;
+  @override
+  @JsonKey()
+  final String stack;
+
+  @override
+  String toString() {
+    return 'CollectionState.error(message: $message, stack: $stack)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CollectionErrorState &&
+            (identical(other.message, message) || other.message == message) &&
+            (identical(other.stack, stack) || other.stack == stack));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, message, stack);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CollectionErrorStateCopyWith<_$CollectionErrorState> get copyWith =>
+      __$$CollectionErrorStateCopyWithImpl<_$CollectionErrorState>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() empty,
+    required TResult Function() loading,
+    required TResult Function(
+            int pageCounter, CollectionViewModel viewModel, bool isLoading)
+        loaded,
+    required TResult Function(String message, String stack) error,
+  }) {
+    return error(message, stack);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? empty,
+    TResult? Function()? loading,
+    TResult? Function(
+            int pageCounter, CollectionViewModel viewModel, bool isLoading)?
+        loaded,
+    TResult? Function(String message, String stack)? error,
+  }) {
+    return error?.call(message, stack);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? empty,
+    TResult Function()? loading,
+    TResult Function(
+            int pageCounter, CollectionViewModel viewModel, bool isLoading)?
+        loaded,
+    TResult Function(String message, String stack)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(message, stack);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(CollectionEmptyState value) empty,
+    required TResult Function(CollectionLoadingState value) loading,
+    required TResult Function(CollectionLoadedState value) loaded,
+    required TResult Function(CollectionErrorState value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(CollectionEmptyState value)? empty,
+    TResult? Function(CollectionLoadingState value)? loading,
+    TResult? Function(CollectionLoadedState value)? loaded,
+    TResult? Function(CollectionErrorState value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(CollectionEmptyState value)? empty,
+    TResult Function(CollectionLoadingState value)? loading,
+    TResult Function(CollectionLoadedState value)? loaded,
+    TResult Function(CollectionErrorState value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CollectionErrorState implements CollectionState {
+  const factory CollectionErrorState(final String message,
+      {final String stack}) = _$CollectionErrorState;
+
+  String get message;
+  String get stack;
+  @JsonKey(ignore: true)
+  _$$CollectionErrorStateCopyWith<_$CollectionErrorState> get copyWith =>
       throw _privateConstructorUsedError;
 }
